@@ -1,0 +1,28 @@
+{
+  "name": "interactivemap",
+  "version": "1.0.0",
+  "description": "A SVG based interactive COVID tracker for Canada",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VarunV991/COVID-19-Canada-Tracker.git"
+  },
+  "keywords": [
+    "COVID-19",
+    "tracker",
+    "svg"
+  ],
+  "author": "Varun V",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VarunV991/COVID-19-Canada-Tracker/issues"
+  },
+  "homepage": "https://github.com/VarunV991/COVID-19-Canada-Tracker#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1"
+  }
+}
