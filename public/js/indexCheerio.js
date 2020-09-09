@@ -1,6 +1,6 @@
 // Function to load the map
 var toggle_bool = true;
-function load_map(regions){
+function load_map(regions,toggle_bool){
     for(i = 0; i < regions.length; i++) {
         let styleCSS = {};
         if(toggle_bool){
@@ -256,7 +256,7 @@ var Canada = {
         "deaths":data.canada[13].deaths
 }
 
-$(load_map(regions));
+$(load_map(regions,toggle_bool));
 
 // Data from the API
 let requestURL = "https://covid-dataapi.herokuapp.com/canada";
@@ -379,13 +379,12 @@ request.onload = function(){
             "recovered":data.canada[13].recovered,
             "deaths":data.canada[13].deaths
     }
-    console.log(data)
-    load_map(regions);
 
+    var toggle_bool = true;
+    load_map(regions,toggle_bool);
+    $('#toggle').click(function(){
+        toggle_bool = !toggle_bool;
+        load_map();
+        console.log(toggle_bool);
+    })
 }
-
-$('#toggle').click(function(){
-    toggle_bool = !toggle_bool;
-    load_map();
-    console.log(toggle_bool);
-})
