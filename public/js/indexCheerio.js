@@ -1,5 +1,121 @@
-// Function to load the map
 var toggle_bool = true;
+
+// Inital Files for faster load
+const data = {"canada":[{"state":" British Columbia","cases":65591,"recovered":4978,"deaths":213},{"state":" Alberta","cases":15093,"recovered":13154,"deaths":247},{"state":" Saskatchewan","cases":1669,"recovered":1587,"deaths":24},{"state":" Manitoba","cases":1349,"recovered":940,"deaths":16},{"state":" Ontario","cases":43536,"recovered":39196,"deaths":2813},{"state":" Quebec","cases":63876,"recovered":56162,"deaths":5770},{"state":" New Brunswick","cases":192,"recovered":188,"deaths":2},{"state":" Prince Edward Island","cases":53,"recovered":44,"deaths":0},{"state":" Nova Scotia","cases":1086,"recovered":1018,"deaths":65},{"state":" Newfoundland and Labrador","cases":270,"recovered":265,"deaths":3},{"state":" Yukon","cases":15,"recovered":15,"deaths":0},{"state":" Northwest Territories","cases":5,"recovered":5,"deaths":0},{"state":" Nunavut","cases":0,"recovered":0,"deaths":0},{"state":"canada","cases":133748,"recovered":117565,"deaths":9153}]}
+
+var regions=[
+    {
+        "region_name": "British Columbia",
+        "region_code": "BC",
+        "region_link": "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health",
+        "cases": data.canada[0].cases,
+        "recovered":data.canada[0].recovered,
+        "deaths":data.canada[0].deaths
+    },
+    {
+        "region_name": "Alberta",
+        "region_code": "ALTA",
+        "region_link": "https://www.alberta.ca/health-wellness.aspx",
+        "cases": data.canada[1].cases,
+        "recovered":data.canada[1].recovered,
+        "deaths":data.canada[1].deaths
+    },
+    {
+        "region_name": "Saskatchewan",
+        "region_code": "SASK",
+        "region_link": "https://www.saskatchewan.ca/residents/health",
+        "cases": data.canada[2].cases,
+        "recovered":data.canada[2].recovered,
+        "deaths":data.canada[2].deaths
+    },
+    {
+        "region_name": "Manitoba",
+        "region_code": "MAN",
+        "region_link": "https://www.gov.mb.ca/health/",
+        "cases": data.canada[3].cases,
+        "recovered":data.canada[3].recovered,
+        "deaths":data.canada[3].deaths
+    },
+    {
+        "region_name": "Ontario",
+        "region_code": "ONT",
+        "region_link": "https://www.ontario.ca/page/health-care-ontario",
+        "cases": data.canada[4].cases,
+        "recovered":data.canada[4].recovered,
+        "deaths":data.canada[4].deaths
+    },
+    {
+        "region_name": "Quebec",
+        "region_code": "QUE",
+        "region_link": "https://www.ramq.gouv.qc.ca/fr/Pages/accueil.aspx",
+        "cases": data.canada[5].cases,
+        "recovered":data.canada[5].recovered,
+        "deaths":data.canada[5].deaths
+    },
+    {
+        "region_name": "New Brunswick",
+        "region_code": "NB",
+        "region_link": "https://www2.gnb.ca/content/gnb/en/departments/health.html",
+        "cases": data.canada[6].cases,
+        "recovered":data.canada[6].recovered,
+        "deaths":data.canada[6].deaths
+    },
+    {
+        "region_name": "Prince Edward Island",
+        "region_code": "PEI",
+        "region_link": "https://www.princeedwardisland.ca/en/topic/health",
+        "cases": data.canada[7].cases,
+        "recovered":data.canada[7].recovered,
+        "deaths":data.canada[7].deaths
+    },
+    {
+        "region_name": "Nova Scotia",
+        "region_code": "NS",
+        "region_link": "http://www.nshealth.ca/primary-health-care",
+        "cases": data.canada[8].cases,
+        "recovered":data.canada[8].recovered,
+        "deaths":data.canada[8].deaths
+    },
+    {
+        "region_name": "Newfoundland and Labrador",
+        "region_code": "NFLD",
+        "region_link": "https://www.health.gov.nl.ca/health/",
+        "cases": data.canada[9].cases,
+        "recovered":data.canada[9].recovered,
+        "deaths":data.canada[9].deaths
+    },
+    {
+        "region_name": "Yukon",
+        "region_code": "YK",
+        "region_link": "http://www.hss.gov.yk.ca/healthservices.php",
+        "cases": data.canada[10].cases,
+        "recovered":data.canada[10].recovered,
+        "deaths":data.canada[10].deaths
+    },
+    {
+        "region_name": "Northwest Territories",
+        "region_code": "NWT",
+        "region_link": "https://www.hss.gov.nt.ca/en",
+        "cases": data.canada[11].cases,
+        "recovered":data.canada[11].recovered,
+        "deaths":data.canada[11].deaths
+    },
+    {
+        "region_name": "Nunavut",
+        "region_code": "NU",
+        "region_link": "https://www.gov.nu.ca/health",
+        "cases": data.canada[12].cases,
+        "recovered":data.canada[12].recovered,
+        "deaths":data.canada[12].deaths
+    },
+];
+
+var Canada = {
+    "region_name": "Canada",
+    "cases": data.canada[13].cases,
+        "recovered":data.canada[13].recovered,
+        "deaths":data.canada[13].deaths
+}
 function load_map(regions,toggle_bool){
     for(i = 0; i < regions.length; i++) {
         let styleCSS = {};
@@ -138,124 +254,6 @@ function load_map(regions,toggle_bool){
     })
 }
 
-
-// Inital Files for faster load
-const data = {"canada":[{"state":" British Columbia","cases":65591,"recovered":4978,"deaths":213},{"state":" Alberta","cases":15093,"recovered":13154,"deaths":247},{"state":" Saskatchewan","cases":1669,"recovered":1587,"deaths":24},{"state":" Manitoba","cases":1349,"recovered":940,"deaths":16},{"state":" Ontario","cases":43536,"recovered":39196,"deaths":2813},{"state":" Quebec","cases":63876,"recovered":56162,"deaths":5770},{"state":" New Brunswick","cases":192,"recovered":188,"deaths":2},{"state":" Prince Edward Island","cases":53,"recovered":44,"deaths":0},{"state":" Nova Scotia","cases":1086,"recovered":1018,"deaths":65},{"state":" Newfoundland and Labrador","cases":270,"recovered":265,"deaths":3},{"state":" Yukon","cases":15,"recovered":15,"deaths":0},{"state":" Northwest Territories","cases":5,"recovered":5,"deaths":0},{"state":" Nunavut","cases":0,"recovered":0,"deaths":0},{"state":"canada","cases":133748,"recovered":117565,"deaths":9153}]}
-
-var regions=[
-    {
-        "region_name": "British Columbia",
-        "region_code": "BC",
-        "region_link": "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/health",
-        "cases": data.canada[0].cases,
-        "recovered":data.canada[0].recovered,
-        "deaths":data.canada[0].deaths
-    },
-    {
-        "region_name": "Alberta",
-        "region_code": "ALTA",
-        "region_link": "https://www.alberta.ca/health-wellness.aspx",
-        "cases": data.canada[1].cases,
-        "recovered":data.canada[1].recovered,
-        "deaths":data.canada[1].deaths
-    },
-    {
-        "region_name": "Saskatchewan",
-        "region_code": "SASK",
-        "region_link": "https://www.saskatchewan.ca/residents/health",
-        "cases": data.canada[2].cases,
-        "recovered":data.canada[2].recovered,
-        "deaths":data.canada[2].deaths
-    },
-    {
-        "region_name": "Manitoba",
-        "region_code": "MAN",
-        "region_link": "https://www.gov.mb.ca/health/",
-        "cases": data.canada[3].cases,
-        "recovered":data.canada[3].recovered,
-        "deaths":data.canada[3].deaths
-    },
-    {
-        "region_name": "Ontario",
-        "region_code": "ONT",
-        "region_link": "https://www.ontario.ca/page/health-care-ontario",
-        "cases": data.canada[4].cases,
-        "recovered":data.canada[4].recovered,
-        "deaths":data.canada[4].deaths
-    },
-    {
-        "region_name": "Quebec",
-        "region_code": "QUE",
-        "region_link": "https://www.ramq.gouv.qc.ca/fr/Pages/accueil.aspx",
-        "cases": data.canada[5].cases,
-        "recovered":data.canada[5].recovered,
-        "deaths":data.canada[5].deaths
-    },
-    {
-        "region_name": "New Brunswick",
-        "region_code": "NB",
-        "region_link": "https://www2.gnb.ca/content/gnb/en/departments/health.html",
-        "cases": data.canada[6].cases,
-        "recovered":data.canada[6].recovered,
-        "deaths":data.canada[6].deaths
-    },
-    {
-        "region_name": "Prince Edward Island",
-        "region_code": "PEI",
-        "region_link": "https://www.princeedwardisland.ca/en/topic/health",
-        "cases": data.canada[7].cases,
-        "recovered":data.canada[7].recovered,
-        "deaths":data.canada[7].deaths
-    },
-    {
-        "region_name": "Nova Scotia",
-        "region_code": "NS",
-        "region_link": "http://www.nshealth.ca/primary-health-care",
-        "cases": data.canada[8].cases,
-        "recovered":data.canada[8].recovered,
-        "deaths":data.canada[8].deaths
-    },
-    {
-        "region_name": "Newfoundland and Labrador",
-        "region_code": "NFLD",
-        "region_link": "https://www.health.gov.nl.ca/health/",
-        "cases": data.canada[9].cases,
-        "recovered":data.canada[9].recovered,
-        "deaths":data.canada[9].deaths
-    },
-    {
-        "region_name": "Yukon",
-        "region_code": "YK",
-        "region_link": "http://www.hss.gov.yk.ca/healthservices.php",
-        "cases": data.canada[10].cases,
-        "recovered":data.canada[10].recovered,
-        "deaths":data.canada[10].deaths
-    },
-    {
-        "region_name": "Northwest Territories",
-        "region_code": "NWT",
-        "region_link": "https://www.hss.gov.nt.ca/en",
-        "cases": data.canada[11].cases,
-        "recovered":data.canada[11].recovered,
-        "deaths":data.canada[11].deaths
-    },
-    {
-        "region_name": "Nunavut",
-        "region_code": "NU",
-        "region_link": "https://www.gov.nu.ca/health",
-        "cases": data.canada[12].cases,
-        "recovered":data.canada[12].recovered,
-        "deaths":data.canada[12].deaths
-    },
-];
-
-var Canada = {
-    "region_name": "Canada",
-    "cases": data.canada[13].cases,
-        "recovered":data.canada[13].recovered,
-        "deaths":data.canada[13].deaths
-}
-
 $(load_map(regions,toggle_bool));
 
 // Data from the API
@@ -384,7 +382,6 @@ request.onload = function(){
     load_map(regions,toggle_bool);
     $('#toggle').click(function(){
         toggle_bool = !toggle_bool;
-        load_map();
-        console.log(toggle_bool);
+        load_map(regions,toggle_bool);
     })
 }
