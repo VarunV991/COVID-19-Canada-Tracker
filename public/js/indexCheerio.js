@@ -120,13 +120,13 @@ function load_map(regions,toggle_bool){
     for(i = 0; i < regions.length; i++) {
         let styleCSS = {};
         if(toggle_bool){
-            if(regions[i].cases>2000){
+            if(regions[i].cases>20000){
                 styleCSS = {'fill':  '#550000'}
             }
-            else if(regions[i].cases>500){
+            else if(regions[i].cases>10000){
                 styleCSS = {'fill':  '#aa0000'}
             }
-            else if(regions[i].cases>100){
+            else if(regions[i].cases>2000){
                 styleCSS = {'fill':  '#d40000'}
             }
             else if(regions[i].cases==0){
@@ -166,10 +166,10 @@ function load_map(regions,toggle_bool){
         
         $('#title').text('Cases');
         $('.one').text(' 0 ');
-        $('.two').text('1-100');
-        $('.three').text('100-500');
-        $('.four').text('500-2000');
-        $('.five').text('>2000');
+        $('.two').text('1-2000');
+        $('.three').text('2000-10000');
+        $('.four').text('10000-20000');
+        $('.five').text('>20000');
     }
 
     else{
